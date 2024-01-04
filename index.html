@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+  <title>MrBeast Combined Counter</title>
+  <meta name="author" content="Combined_Count">
+  <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+  <link rel=stylesheet href="../../assets/ess/odometer.css">
+  <script src="../../assets/ess/odometer.js"></script>
+	<link rel="stylesheet" href="../../assets/css/embed.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+	<link rel="icon" href="/images/mrbeastlogo.png" type="image/x-icon" sizes="16x16">
+<body>
+<div id=powered><span id="powered1text" style="color: black" class="text">
+	The counts here are estimated and powered by <img
+	src="images/favicon.ico"
+	alt=""
+	id="yabcountslogo"
+	width="24"/>
+	<a
+		href="https://yabcounts.com"
+		title="LIVE COUNTERS, REIMAGINED">
+    YAB ?! Counts
+		</a>
+<div id=text><span id="mbtext" style="color: #058aff" class="text">MrBeast Combined Count</span>
+<div id=show><span id="count" style="color: black" class="odometer">0</span>
+	<div id=tex1><span id="mbtex1" style="color: black" class="tex1">Subscribers [ESTIMATED]</span>
+  <style>
+    body {
+      background-color: transparent;
+    }
+
+   #powered {
+      font-size: 16pt;
+      font-family: Roboto;
+      font-weight: 700;
+		 	text-align: center;
+    }
+		
+    #mbtext {
+      font-size: 32pt;
+      font-family: Roboto;
+      font-weight: 700;
+			background: linear-gradient( 
+			to right, #058aff, #0259ca);
+			-webkit-text-fill-color: transparent; 
+			-webkit-background-clip: text; 
+			
+    }
+
+		#text {
+			text-align: center;
+		}
+
+		
+    #count {
+      font-size: 100pt;
+      font-family: Roboto;
+      font-weight: 700;
+    }
+
+    #show {
+      text-align: center;
+    }
+
+    @font-face {
+      font-family: RobotoOld;
+      src: url("https://axern.space/font/Roboto-Regular.tff");
+    }
+  </style>
+  </head>
+
+  <script>
+    var Channels = [
+      "UCX6OQ3DkcsbYNE6H8uQQuVA", //MrBeast 
+      "UCluBATXIP9doWvougjUVUGQ", //MrBeast (Russia)
+      "UCDifkiOICEJ-hiVAvCQlpNA", //MrBeast (Hindi)
+      "UClwITvsAr6JnpLmGufudiTw", //MrBeast (Japan)
+      "UCbHU7ouxaMgfyWSUtI4QK8Q", //MrBeast (Arabic)
+      "UCNAhW2oJvy_FUU082pEDspA", //MrBeast (Spanish)
+      "UCggERuskO1F6XKwor-Pvkww", //MrBeast (Brasil)
+      "UCbf2Ozi4BF34AY3t3rHj9IA", //MrBeast (France)
+      "UCUaT_39o1x6qWjz7K2pWcgw", //Beast Reacts
+      "UCneluyh2H6gU7v8gU8El-Cg", //Beast Reacts (Portugese)
+      "UCLAVIBJWb6geGRSvWsZ_ang", //Beast Reacts (Russia)
+      "UCL6Xc5xuRECnWbGBOKG9APA", //Beast Reacts (Spanish)
+      "UCIPPMRA040LQr5QPyJEbmXA", //MrBeast Gaming
+      "UC1lZ05QnM1R09HiwNMLDdnw", //MrBeast Gaming (Russia)
+      "UCfNGT03h99S3zLbyUD9FMuQ", //MrBeast Gaming (Spanish)
+      "UCpPJaHR_s3qYSCzry78G7lg", //MrBeast Gaming (Brasil)
+      "UC4-79UOlP48-QNGgCko5p2g", //MrBeast Shorts
+      "UCAiLfjNXkNv24uhpzUgPa6A", //Beast Philantrophy
+      "UCZzvDDvaYti8Dd8bLEiSoyQ", //Mrbeast 2
+      "UC68DIXWCmetC8N5J_Kc5gjQ" //Don't Subscribe
+    ];
+    var number = 0;
+    var work = [];
+
+    function render() {
+      datas();
+      number = work.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+      count.innerHTML = number;
+    }
+
+    function datas() {
+      for (let i = 0; i < Channels.length; i++) {
+fetch("https://api.yabcounts.com/public/youtube/channel/"+ Channels[i] + "?key=pGt86ZWvcSYG2ZO8MV4eNPJLenTe5u")
+          .then((res) => res.json())
+          .then((data) => {
+            work[i] = data.statistics.subscriberCount;
+          });
+      }
+    }
+
+
+
+    render();
+
+    setInterval(() => {
+      render();
+    }, 2000);
+  </script>
