@@ -17,14 +17,14 @@
 <body>
 <div id=powered><span id="powered1text" style="color: black" class="text">
 	The counts here are estimated and powered by <img
-	src="images/favicon.ico"
+	src="images/axernspace.ico"
 	alt=""
-	id="yabcountslogo"
+	id="axernlogo"
 	width="24"/>
 	<a
-		href="https://yabcounts.com"
-		title="LIVE COUNTERS, REIMAGINED">
-    YAB ?! Counts
+		href="https://axern.space"
+		title="THE BEST LIVECOUNTER WEBSITE">
+    axern.space
 		</a>
 <div id=text><span id="mbtext" style="color: #058aff" class="text">MrBeast Combined Count</span>
 <div id=show><span id="count" style="color: black" class="odometer">0</span>
@@ -110,10 +110,10 @@
 
     function datas() {
       for (let i = 0; i < Channels.length; i++) {
-fetch("https://api.yabcounts.com/public/youtube/channel/"+ Channels[i] + "?key=pGt86ZWvcSYG2ZO8MV4eNPJLenTe5u")
+fetch("https://axern.space/api/get?platform=youtube&type=channel&id="+ Channels[i] + "")
           .then((res) => res.json())
           .then((data) => {
-            work[i] = data.statistics.subscriberCount;
+            work[i] = data.estSubCount;
           });
       }
     }
