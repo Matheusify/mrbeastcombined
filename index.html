@@ -15,32 +15,37 @@
   <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
 	<link rel="icon" href="/images/mrbeastlogo.png" type="image/x-icon" sizes="16x16">
 <body>
-<div id=powered><span id="powered1text" style="color: black" class="text">
+<div id=powered><span id="powered1text" style="color: white" class="text">
 	The counts here are estimated and powered by <img
-	src="images/axernspace.ico"
+	src="images/nialogo.png"
 	alt=""
-	id="axernlogo"
+	id="nialogo"
 	width="24"/>
 	<a
-		href="https://axern.space"
-		title="THE BEST LIVECOUNTER WEBSITE">
-    axern.space
+		href="https://nia-statistics.com/"
+    target="_blank"
+    rel="noopenernoreferrer"
+		title="Nia Statistics">
+    Nia's Stream Estimations
 		</a>
 <div id=text><span id="mbtext" style="color: #058aff" class="text">MrBeast Combined Count</span>
-<div id=show><span id="count" style="color: black" class="odometer">0</span>
-	<div id=tex1><span id="mbtex1" style="color: black" class="tex1">Subscribers [ESTIMATED]</span>
-    <div id=tex21><span id="mbtex21" style="color: black" class="tex21"><img 
+<div id=show><span id="count" style="color: white" class="odometer">0</span>
+	<div id=tex1><span id="mbtex1" style="color: white" class="tex1">Subscribers [ESTIMATED]</span>
+    <div id=tex21><span id="mbtex21" style="color: white" class="tex21"><img 
       src="images/githublogo.png"
       alt=""
       id="githublogo"
-      width="24"
+      width="24"  
       />  <a
-        href="https://github.com/Matheusify/mrbeastcombined">
+        href="https://github.com/Matheusify/mrbeastcombined"
+        target="_blank"
+        rel="noopenernoreferrer"
+        >
         Source Code
       </a></span>
   <style>
     body {
-      background-color: transparent;
+      background-color: black;
     }
 
    #powered {
@@ -126,7 +131,7 @@
 
     function datas() {
       for (let i = 0; i < Channels.length; i++) {
-fetch("https://axern.space/api/get?platform=youtube&type=channel&id="+ Channels[i] + "")
+fetch("https://nia-statistics.com/api/get?platform=youtube&type=channel&id="+ Channels[i] + "")
           .then((res) => res.json())
           .then((data) => {
             work[i] = data.estSubCount;
