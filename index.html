@@ -131,7 +131,7 @@
 
     function datas() {
       for (let i = 0; i < Channels.length; i++) {
-fetch("https://axern.space/api/get?platform=youtube&type=channel&id="+ Channels[i] + "")
+fetch("https://nia-statistics.com/api/get?platform=youtube&type=channel&id="+ Channels[i] + "")
           .then((res) => res.json())
           .then((data) => {
             work[i] = data.estSubCount;
